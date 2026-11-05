@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Go-Kart Racing | Official Event</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #101010;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #171717;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e32626;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+    color: #ff3838;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #ff3838;
+}
+
+.hero {
+    min-height: 430px;
+    padding: 100px 8%;
+    background: linear-gradient(90deg, #101010, #381010);
+}
+
+.tag {
+    color: #ff4141;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 8vw, 75px);
+    margin: 15px 0;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #ff3838;
+}
+
+.hero p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    background: #e32626;
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    margin-top: 25px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+section {
+    padding: 65px 8%;
+}
+
+.section-title {
+    font-size: 30px;
+    margin-bottom: 25px;
+    border-left: 5px solid #e32626;
+    padding-left: 14px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    padding: 25px;
+    border-radius: 7px;
+}
+
+.card h3 {
+    color: #ff4141;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #bbb;
+    line-height: 1.6;
+}
+
+.countdown {
+    background: #e32626;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.countdown h2 {
+    margin-bottom: 15px;
+}
+
+#timer {
+    font-size: clamp(25px, 5vw, 42px);
+    font-weight: bold;
+}
+
+.prize {
+    text-align: center;
+    border-top: 3px solid #e32626;
+}
+
+.prize strong {
+    display: block;
+    font-size: 28px;
+    margin-top: 12px;
+}
+
+.gold { color: #ffd700; }
+.silver { color: #c0c0c0; }
+.bronze { color: #cd7f32; }
+
+.rules {
+    display: grid;
+    gap: 12px;
+}
+
+.rule {
+    background: #1c1c1c;
+    padding: 16px;
+    border-left: 3px solid #e32626;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+.registration {
+    background: #1b1b1b;
+    text-align: center;
+    border: 1px solid #e32626;
+    border-radius: 8px;
+}
+
+.registration h2 {
+    color: #ff4141;
+    margin-bottom: 15px;
+}
+
+footer {
+    background: #080808;
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    font-size: 13px;
+}
+
+@media(max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 5px;
+        display: inline-block;
+    }
+
+    .hero {
+        padding: 75px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🏁 GO-KART RACING</div>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#race">RACE</a>
+        <a href="#prizes">PRIZES</a>
+        <a href="#rules">RULES</a>
+        <a href="#register">REGISTER</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <div class="tag">OFFICIAL COMMUNITY EVENT</div>
+    <h1>READY.<br><span>SET. RACE!</span></h1>
+    <p>20 racers. 3 laps. One champion.</p>
+    <p>Friday, 6 November 2026 · 4:30 PM</p>
+    <a class="btn" href="#register">PARTICIPATION INFO →</a>
+</div>
+
+<section id="race">
+    <h2 class="section-title">THE RACE</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>🏎️ 20 RACERS</h3>
+            <p>20 participants competing for the podium.</p>
+        </div>
+        <div class="card">
+            <h3>👮 4 MODERATORS</h3>
+            <p>Our moderation team will supervise the event.</p>
+        </div>
+        <div class="card">
+            <h3>🏁 3 LAPS</h3>
+            <p>Complete all three laps to compete for victory.</p>
+        </div>
+        <div class="card">
+            <h3>🔧 TUNING</h3>
+            <p>Go-Kart tuning, including horsepower adjustments, is allowed.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="countdown">
+        <h2>RACE COUNTDOWN</h2>
+        <div id="timer">Calculating...</div>
+    </div>
+</section>
+
+<section id="prizes">
+    <h2 class="section-title">PRIZE POOL</h2>
+    <div class="cards">
+        <div class="card prize">
+            <h3 class="gold">🥇 FIRST PLACE</h3>
+            <strong>100K</strong>
+            <p>In-game money</p>
+        </div>
+        <div class="card prize">
+            <h3 class="silver">🥈 SECOND PLACE</h3>
+            <strong>75K</strong>
+            <p>In-game money</p>
+        </div>
+        <div class="card prize">
+            <h3 class="bronze">🥉 THIRD PLACE</h3>
+            <strong>50K</strong>
+            <p>In-game money</p>
+        </div>
+    </div>
+</section>
+
+<section id="rules">
+    <h2 class="section-title">OFFICIAL RACE RULES</h2>
+    <div class="rules">
+        <div class="rule">01. Follow all moderator instructions.</div>
+        <div class="rule">02. No intentional ramming or sabotaging other racers.</div>
+        <div class="rule">03. No shortcuts or leaving the designated track.</div>
+        <div class="rule">04. Exploiting, cheating or using glitches for an advantage is prohibited.</div>
+        <div class="rule">05. Do not interfere with other racers.</div>
+        <div class="rule">06. Respect all participants and moderators.</div>
+        <div class="rule">07. All racers must complete the required 3 laps.</div>
+        <div class="rule">08. Do not argue with moderators during the race.</div>
+        <div class="rule">09. Report rule violations to the moderators.</div>
+        <div class="rule">10. Moderators have the authority to disqualify participants who break the rules.</div>
+        <div class="rule">11. Go-Kart tuning is allowed, including horsepower adjustments.</div>
+        <div class="rule">12. Mass rule-breaking or repeated serious violations may result in a ban from participating in future community events.</div>
+    </div>
+</section>
+
+<section id="register">
+    <div class="registration card">
+        <h2>WANT TO RACE?</h2>
+        <p>The first 20 people to register in our Discord Participation thread will secure their racing spots.</p>
+        <p style="margin-top:12px;color:#ff4141;font-weight:bold;">
+            SPOTS ARE LIMITED TO 20 RACERS!
+        </p>
+        <p style="margin-top:15px;">Find the 🥳Participation thread in our Discord server and write:</p>
+        <p style="margin-top:15px;font-weight:bold;">
+            "I want to participate in the event"
+        </p>
+        <a class="btn" href="https://discord.com/channels/1231686821654560838/1567918107673100368" target="_blank">JOIN DISCORD →</a>
+    </div>
+</section>
+
+<section id="staff">
+    <h2 class="section-title">EVENT ORGANIZATION</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>EVENT ORGANIZERS</h3>
+            <p>Responsible for planning and organizing the event.</p>
+        </div>
+        <div class="card">
+            <h3>4 MODERATORS</h3>
+            <p>Responsible for supervision, fairness and race management.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    🏁 GO-KART RACING EVENT<br><br>
+    Organized by the Community Event Team.
+</footer>
+
+<script>
+const eventDate = new Date("2026-11-06T16:30:00+03:00").getTime();
+
+function updateTimer() {
+    const now = Date.now();
+    const distance = eventDate - now;
+    const timer = document.getElementById("timer");
+
+    if (distance <= 0) {
+        timer.textContent = "RACE DAY!";
+        return;
+    }
+
+    const days = Math.floor(distance / 86400000);
+    const hours = Math.floor((distance % 86400000) / 3600000);
+    const minutes = Math.floor((distance % 3600000) / 60000);
+    const seconds = Math.floor((distance % 60000) / 1000);
+
+    timer.textContent =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
